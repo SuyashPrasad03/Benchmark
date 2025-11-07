@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Industry Comparator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Steel Industry Comparator 📊</h1>
+            <p>Compare Tata Steel against other steel companies using data from their latest reports.</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <!-- Competitor Selection -->
+                <div class="form-section">
+                    <h3>1. Select Competitors to Compare</h3>
+                    <div id="competitor-list">
+                        <!-- Checkboxes will be populated here -->
+                    </div>
+                    <div class="select-all-container">
+                        <input type="checkbox" id="select-all">
+                        <label for="select-all">Select All</label>
+                    </div>
+                </div>
+
+                <!-- Query Input -->
+                <div class="form-section">
+                    <h3>2. Enter Your Comparison Query</h3>
+                    <form id="query-form">
+                        <input type="text" id="query-input" value="Compare Revenue and Net Profit" required>
+                        <button type="submit" id="submit-button">Compare</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading-overlay" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing reports with Gemini...</p>
+            </div>
+
+            <!-- Results -->
+            <div id="results-area" class="hidden">
+                <div class="form-section">
+                    <h3>3. Comparison Results</h3>
+                    <div class="graph-controls">
+                        <label for="graph-toggle">Show Graph:</label>
+                        <input type="checkbox" id="graph-toggle" checked>
+                    </div>
+                    <div id="table-container"></div>
+                    <div id="graph-container">
+                        <canvas id="comparison-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
